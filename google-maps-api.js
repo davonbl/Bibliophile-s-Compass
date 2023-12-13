@@ -1,5 +1,5 @@
 // let map;
-import { clickBtn } from "./testing.js";
+import { clickBtn } from './src/inputQuery.js';
 
 export async function initMap(testing) {
   const { Map } = await google.maps.importLibrary("maps");

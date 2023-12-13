@@ -1,4 +1,6 @@
 import { YELP_API_KEY } from "../API-KEY.js";
+import { clickBtn } from "./inputQuery.js";
+// import {displayAllPlaces} from './sort-places.js'
 import axios from "axios";
 
 
@@ -17,7 +19,7 @@ import axios from "axios";
 //   })
 
 
-export async function yelpApi(){
+export async function yelpApi(input){
 
     /*
     The cors_anywhere variable is needed to bypass the cors error that is a byproduct of the Yelp development team 'to keep
@@ -38,7 +40,21 @@ export async function yelpApi(){
         }
       };
 
-    const withCategories = '?location=Brooklyn&term=bookstore&categories=bookstores&sort_by=best_match';
+    let inputLocation; 
+    console.log(inputLocation)
+
+    if(!localStorage.getItem('inputLocation')){
+        let jsonInput = input
+        localStorage.setItem('inputLocation', JSON.stringify(jsonInput))
+        inputLocation = input.split(' ').join('%20').toLowerCase()
+        // console.log(localStorage.getItem('inputLocation'))
+    }else{
+        let parseJSON = JSON.parse(localStorage.getItem('inputLocation'))
+        inputLocation = parseJSON.split(' ').join('%20').toLowerCase()
+        console.log('it works')
+    }
+
+    const withCategories = `?location=${inputLocation}&term=bookstore&categories=bookstores&sort_by=best_match`;
     const withoutCategories = '?location=New%20York&term=bookstore&sort_by=best_match'
 
     const promise = axios.get(`${baseUrl}${withCategories}`, options)
@@ -87,6 +103,11 @@ export async function yelpApi(){
         // console.log(...bookstore.categories)
     })
 
+    if(input !== ''){
+        displayAllPlaces(businessesArr)
+    }
+
+    // displayAllPlaces(businessesArr)
     return businessesArr
 
     // console.log('look here', returnFilterObj)

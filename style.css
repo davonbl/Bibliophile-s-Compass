@@ -178,7 +178,7 @@ a{
 }
 
 .sort-button p, .filter-button p{
-  width: 10%;
+  /* width: 10%; */
 }
 
 #filterBtn1{
