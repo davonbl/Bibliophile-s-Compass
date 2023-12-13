@@ -1,10 +1,10 @@
-// import { initMap } from "../google-maps-api.js"
+import { initMap } from "../google-maps-api.js"
 import { yelpApi } from "./yelp-api.js"
 export const clickBtn = document.querySelector('#clickBtn')
 
 clickBtn.addEventListener('click', () =>{
     const input = document.querySelector('#showContent')
-
+    // debugger
     console.log(input.value.toLowerCase())
     if(localStorage.getItem('inputLocation')){
         let comparePerviousInput = JSON.parse(localStorage.getItem('inputLocation'))

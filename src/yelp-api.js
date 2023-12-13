@@ -2,6 +2,7 @@ import { YELP_API_KEY } from "../API-KEY.js";
 import { clickBtn } from "./inputQuery.js";
 // import {displayAllPlaces} from './sort-places.js'
 import axios from "axios";
+import { initMap } from "../google-maps-api.js";
 
 
 /*   Some to consider */
@@ -26,6 +27,7 @@ export async function yelpApi(input){
     users from developing front-end apps or websites and storing their API key in plaintext'    
     */
     const cors_anywhere = 'https://cors-anywhere.herokuapp.com/'
+    // const cors_anywhere = 'https://cors-proxy.fringe.zone/'
     const baseUrl = `${cors_anywhere}https://api.yelp.com/v3/businesses/search`;
 
     const options = {
@@ -46,11 +48,13 @@ export async function yelpApi(input){
     if(!localStorage.getItem('inputLocation')){
         let jsonInput = input
         localStorage.setItem('inputLocation', JSON.stringify(jsonInput))
-        inputLocation = input.split(' ').join('%20').toLowerCase()
+        // inputLocation = input.split(' ').join('%20').toLowerCase()
+        inputLocation = input.split(' ').join('+').toLowerCase()
         // console.log(localStorage.getItem('inputLocation'))
     }else{
         let parseJSON = JSON.parse(localStorage.getItem('inputLocation'))
-        inputLocation = parseJSON.split(' ').join('%20').toLowerCase()
+        // inputLocation = parseJSON.split(' ').join('%20').toLowerCase()
+        inputLocation = parseJSON.split(' ').join('+').toLowerCase()
         console.log('it works')
     }
 
@@ -104,6 +108,7 @@ export async function yelpApi(input){
     })
 
     if(input !== ''){
+        console.log(businessesArr)
         displayAllPlaces(businessesArr)
     }
 
@@ -136,6 +141,10 @@ export function filterByCity(location){
 
 export function displayAllPlaces(location){
 
+    // console.log(location)
+
+    let markersArr = []
+
     let orderedList = document.createElement('ol')
     orderedList.setAttribute('id', 'yelpData')
 
@@ -143,7 +152,13 @@ export function displayAllPlaces(location){
 
     location.forEach( ele => {
         // const places = document.getElementById("yelpData");
+        console.log(ele.coordinates)
+        console.log(ele.coordinates.latitude)
+        console.log(ele.coordinates.longitude)
 
+        let coordinates = ele.coordinates
+
+        markersArr.push(coordinates)
         // console.log(places.hasChildNodes())
         // console.log(places.childNodes)
         // console.log(places.children)
@@ -209,6 +224,10 @@ export function displayAllPlaces(location){
         console.log(ele.name)
 
     })
+    // initMap(null)
+    // debugger
+    console.log(markersArr)
+    initMap(markersArr)
 
 
 
