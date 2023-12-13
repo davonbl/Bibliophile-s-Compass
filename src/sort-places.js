@@ -3,7 +3,7 @@ import { displayAllPlaces } from "./yelp-api.js"
 
 export function sortByAlphabeticalOrder(locations){
 
-    let sort = locations.sort((a, b) => {
+    let sort = locations.slice().sort((a, b) => {
         let alphabet = 'abcdefghijklmnopqrstuvwxyz'
 
         /* It is not a good idea to re-assigned parameter/argument variables, but to reference it 
