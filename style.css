@@ -126,3 +126,49 @@ html, body{
   display: flex;
   justify-content: space-around;
 }
+
+
+/* Yelp data content */
+
+#yelpData{
+overflow:auto;
+max-height: 500px; 
+border: 2px solid violet;
+/* border-radius: 14px; */
+width: 85%;
+}
+
+.yelp-bookstore{
+  display: flex; 
+  border-bottom: 2px solid black;
+  width: 75%;
+  margin: auto;
+  padding-top: 10px; 
+}
+
+.yelp-bookstore2{
+  padding-top: 20px; 
+}
+
+.yelp-bookstore3{
+  border-bottom:none; 
+}
+
+.yelp-image{
+  /* width:50%; */
+  /* max-width: 75%;  */
+  max-width: 90%; 
+  display: block;
+  margin: auto; 
+  min-width: 140px;
+}
+
+.bookstore-website{
+  text-align: center;
+}
+
+a{
+  color: black;
+  text-decoration: none;
+}
+
