@@ -1,5 +1,6 @@
 import './style.css';
-import { yelpApi, filterByUsedBooks, sortByAlphabeticalOrder, filterByCity, displayAllPlaces } from './src/yelp-api.js';
+import { yelpApi, filterByCity, displayAllPlaces } from './src/yelp-api.js';
+import { filterByUsedBooks } from './src/filter-places.js';
 
 
 let getValue = await yelpApi()
