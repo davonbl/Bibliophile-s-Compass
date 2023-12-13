@@ -17,7 +17,7 @@ import axios from "axios";
 //   })
 
 
-export async function testingYelpApi(){
+export async function yelpApi(){
 
     /*
     The cors_anywhere variable is needed to bypass the cors error that is a byproduct of the Yelp development team 'to keep
@@ -44,15 +44,15 @@ export async function testingYelpApi(){
     const promise = axios.get(`${baseUrl}${withCategories}`, options)
 
     const response = await promise
-    console.log(promise)
+    // console.log(promise)
 
-    console.log(response.data)
+    // console.log(response.data)
     // console.log(response.data.businesses)
     
     const businessesArr = response.data.businesses
 
-    console.log('interesting', businessesArr)
-    console.log(businessesArr[0].name[0])
+    // console.log('interesting', businessesArr)
+    // console.log(businessesArr[0].name[0])
 
     // filterByUsedBooks(businessesArr)
 
@@ -132,7 +132,8 @@ export function filterByUsedBooks(locations){
     })
 
     // console.log(returnFilterObj)
-    return returnFilterObj
+    displayAllPlaces(returnFilterObj)
+    // return returnFilterObj
 
 }
 
@@ -166,8 +167,94 @@ export function sortByAlphabeticalOrder(locations){
             return a0 - b0
         }        
     })
-    return sort
+    displayAllPlaces(sort)
+    // return sort
+}
 
+export function filterByCity(location){
+    console.log(location)
+
+}
+
+export function displayAllPlaces(location){
+
+    let orderedList = document.createElement('ol')
+    orderedList.setAttribute('id', 'yelpData')
+
+    let parentContainer = document.querySelector('#parentContainer')
+
+    location.forEach( ele => {
+        // const places = document.getElementById("yelpData");
+
+        // console.log(places.hasChildNodes())
+        // console.log(places.childNodes)
+        // console.log(places.children)
+
+        while (parentContainer.hasChildNodes()) {
+            parentContainer.removeChild(parentContainer.firstChild);
+          }
+
+        // if (parentContainer.hasChildNodes()) {
+        //     parentContainer.removeChild(parentContainer.children[0]);
+        // }
+
+
+
+        // let orderedList = document.createElement('ol')
+        // orderedList.setAttribute('id', 'yelpData')
+
+        let placeList = document.createElement('li')
+        placeList.setAttribute('id', 'placeList')
+        placeList.classList.add('yelp-bookstore')
+
+        let firstListDiv = document.createElement('div')
+        firstListDiv.setAttribute('id', 'listContent')
+        firstListDiv.classList.add('list-content')
+
+        let h3 = document.createElement('h3')
+        let p1 = document.createElement('p')
+        let p2 = document.createElement('p')
+        let p3 = document.createElement('p')
+
+        h3.innerText = ele.name
+        p1.innerText = `${ele.location.address1}`
+        p2.innerText = `${ele.location.city} ${ele.location.state}, ${ele.location.zip_code}`
+        p3.innerText = `${ele.rating} / 5`
+
+        firstListDiv.append(h3, p1, p2, p3)
+
+        let secondListDiv = document.createElement('div')
+        secondListDiv.classList.add('list-content')
+
+        let image = document.createElement('img')
+        image.setAttribute('id', 'yelpImg')
+        image.classList.add('yelp-image')
+        image.src = ele.image_url
+
+        let anchorTag = document.createElement('a')
+        anchorTag.href = ele.url
+
+        let secondP = document.createElement('p')
+        secondP.classList.add('bookstore-website')
+        secondP.innerText = 'website'
+
+        anchorTag.appendChild(secondP)
+
+        secondListDiv.append(image, anchorTag)
+
+        placeList.append(firstListDiv, secondListDiv)
+
+        orderedList.append(placeList)
+
+        parentContainer.append(orderedList)
+
+        console.log(ele.name)
+
+    })
+
+
+
+        console.log(location)
 }
 
 

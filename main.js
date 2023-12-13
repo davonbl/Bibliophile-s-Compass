@@ -1,9 +1,15 @@
 import './style.css';
-import { testingYelpApi, filterByUsedBooks, sortByAlphabeticalOrder } from './src/yelp-api.js';
+import { yelpApi, filterByUsedBooks, sortByAlphabeticalOrder, filterByCity, displayAllPlaces } from './src/yelp-api.js';
 
 
-let getValue = await testingYelpApi()
+let getValue = await yelpApi()
 
-console.log(filterByUsedBooks(getValue))
+// console.log(filterByUsedBooks(getValue))
 // console.log(sortByAlphabeticalOrder(getValue))
+
+
+//This works great
+// displayAllPlaces(getValue)
+// sortByAlphabeticalOrder(getValue)
+filterByUsedBooks(getValue)
 
