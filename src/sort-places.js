@@ -1,4 +1,4 @@
-import { displayAllPlaces } from "./yelp-api.js"
+import { displayAllPlaces } from "./get-all-places.js"
 
 
 export function sortByAlphabeticalOrder(locations){
@@ -10,8 +10,6 @@ export function sortByAlphabeticalOrder(locations){
             to get the value stored in a variable. Or you will get the error mentioned in the conditional
             block of code 
         */
-        //  a = alphabet.indexOf(a.name[0].toLowerCase())
-        //  b = alphabet.indexOf(b.name[0].toLowerCase())
         let a0 = alphabet.indexOf(a.name[0].toLowerCase())
         let b0 = alphabet.indexOf(b.name[0].toLowerCase())
 

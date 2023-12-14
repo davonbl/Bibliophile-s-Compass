@@ -6,8 +6,11 @@ clickBtn.addEventListener('click', () =>{
     const removeHidden = document.querySelector('#removeHidden')
     removeHidden.removeAttribute("hidden")
     const input = document.querySelector('#showContent')
-    // debugger
-    console.log(input.value.toLowerCase())
+
+    // for later
+    // const googleMaps = document.querySelector('#map')
+    // googleMaps.style.display = 'inline-block'
+
     if(localStorage.getItem('inputLocation')){
         let comparePerviousInput = JSON.parse(localStorage.getItem('inputLocation'))
         if(input.value.toLowerCase() !== comparePerviousInput){

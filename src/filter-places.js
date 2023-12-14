@@ -1,4 +1,4 @@
-import { displayAllPlaces } from "./yelp-api.js";
+import { displayAllPlaces } from "./get-all-places.js";
 
 export function filterByUsedBooks(locations){
 
