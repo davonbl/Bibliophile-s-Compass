@@ -12,9 +12,9 @@ import { initMap } from "../google-maps-api.js"
 
     location.forEach( ele => {
         // const places = document.getElementById("yelpData");
-        console.log(ele.coordinates)
-        console.log(ele.coordinates.latitude)
-        console.log(ele.coordinates.longitude)
+        // console.log(ele.coordinates)
+        // console.log(ele.coordinates.latitude)
+        // console.log(ele.coordinates.longitude)
 
         let coordinates = ele.coordinates
 
@@ -73,7 +73,7 @@ import { initMap } from "../google-maps-api.js"
 
         parentContainer.append(orderedList)
 
-        console.log(ele.name)
+        // console.log(ele.name)
 
     })
     // console.log(markersArr)

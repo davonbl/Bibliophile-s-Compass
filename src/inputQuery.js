@@ -5,6 +5,8 @@ export const clickBtn = document.querySelector('#clickBtn')
 clickBtn.addEventListener('click', () =>{
     const removeHidden = document.querySelector('#removeHidden')
     removeHidden.removeAttribute("hidden")
+    removeHidden.style.display = 'flex'
+    removeHidden.style.justifyContent= "flex-start"
     const input = document.querySelector('#showContent')
 
     // for later
