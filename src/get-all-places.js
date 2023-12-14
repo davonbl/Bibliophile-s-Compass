@@ -11,6 +11,7 @@ import { initMap } from "./google-maps-api.js"
     let parentContainer = document.querySelector('#parentContainer')
 
     location.forEach( ele => {
+        let childArr =[]
         // const places = document.getElementById("yelpData");
         // console.log(ele.coordinates)
         // console.log(ele.coordinates.latitude)
@@ -18,7 +19,15 @@ import { initMap } from "./google-maps-api.js"
 
         let coordinates = ele.coordinates
 
-        markersArr.push(coordinates)
+        let name = ele.name
+        let address = ele.location
+        let phoneNumber = ele.display_phone
+
+        // let contentObj = Object.assign({}, name, address, phoneNumber)
+
+        childArr.push(coordinates, name,address, phoneNumber)
+
+        markersArr.push(childArr)
         // console.log(places.hasChildNodes())
         // console.log(places.childNodes)
         // console.log(places.children)

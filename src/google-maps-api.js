@@ -13,30 +13,33 @@ export async function initMap(testing) {
       // mapId: "DEMO_MAP_ID"
     });
 
-    console.log('google-maps-object-content', testing)
+    console.log('google-maps-object-content: ', testing)
+    // console.log('very likely- the actual object: ', testing2)
 
-    const infoWindow = new google.maps.InfoWindow()
+    // const infoWindow = new google.maps.InfoWindow()
 
-    const showContent = `<h1>East Villiage Books </h1>
-    
-    
-    
-    
-    
-    
-    `
+    // // let locationName = location
 
-    infoWindow.setContent(showContent)
+    // const showContent = `<h1>East Villiage Books </h1>
+    
+    
+    
+    
+    
+    
+    // `
 
-    const testingMarker = new google.maps.Marker({
-      map,
-      position: eastVilliageBooks,
+    // infoWindow.setContent(showContent)
+
+    // const testingMarker = new google.maps.Marker({
+    //   map,
+    //   position: eastVilliageBooks,
       
-    })
+    // })
 
-    testingMarker.addListener('click', () => {
-      infoWindow.open(map, testingMarker)
-    })
+    // testingMarker.addListener('click', () => {
+    //   infoWindow.open(map, testingMarker)
+    // })
 
     if(testing !== undefined && testing !== null){
       //this is where I would create a forLoop to loop through the coordinates from the 
@@ -44,16 +47,31 @@ export async function initMap(testing) {
 
       testing.forEach((ele) => {
 
+        const getInfoWindow = new google.maps.InfoWindow()
+        const markerContent = `
+        <p><b>${ele[1]}</b></p>
+        <p>${ele[2].display_address[0]} ${ele[2].display_address[1]}</p>
+        <p>${ele[3]} </p>
+
+        `
+        getInfoWindow.setContent(markerContent)
+
         // console.log(ele)
-        let lat = Number(ele.latitude)
-        let lng = Number(ele.longitude)
+        let lat = Number(ele[0].latitude)
+        let lng = Number(ele[0].longitude)
+
+
         let obj = Object.assign({}, {"lat" : lat}, {"lng": lng})
         // let lat = Number(ele.latitude);
         // let lng = Number(ele.longitude);
         // let position = new google.maps.LatLng(lat, lng)
-        new google.maps.Marker({
+        let showMarker = new google.maps.Marker({
           position: obj,
           map: map,
+        })
+
+        showMarker.addListener('click', () => {
+          getInfoWindow.open(map, showMarker)
         })
       })
       // this line of code will be the first to remove all of the inital google markers
