@@ -15,10 +15,10 @@ export async function initMap(testing) {
 
 //   console.log(testing !== undefined)
 //   console.log(testing !== null)
-  const marker = new google.maps.Marker({
-    position: eastVilliageBooks,
-    map: map,
-  })
+  // const marker = new google.maps.Marker({
+  //   position: eastVilliageBooks,
+  //   map: map,
+  // })
 
 //   debugger
 //   console.log(testing === null)

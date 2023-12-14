@@ -11,7 +11,7 @@
   </head>
   <body>
     <dialog id="corsModual" class= "cors-modual">
-      <p>CORS needs to be enabled for this application to work. Click 'OK to enable it</p>
+      <p>CORS needs to be enabled for this application to work. Click 'OK to enable it. If you already have then click 'Cancel'.</p>
       <button id="enableBtn">OK</button>
       <button id="cancelBtn">Cancel</button>
     </dialog>
@@ -24,7 +24,8 @@
           <button id = 'clickBtn'>Click Here</button>
         </div>
 
-        <div class = 'buttons'>
+        <div id = 'removeHidden' class = 'buttons' hidden>
+          <p class ='adding-border-top'></p>
           <div class = 'sort-button'>
             <p>Sort:</p>
             <button id = 'sortBtn'>Order locations by alphabetical order</button>

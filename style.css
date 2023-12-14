@@ -186,6 +186,13 @@ a{
 }
 
 
+
+.adding-border-top{
+  border: 2px solid black;
+  width: 91%;
+}
+
+
 /* cors time */
 
 /* .cors-modual{

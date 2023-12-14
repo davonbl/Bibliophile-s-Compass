@@ -3,6 +3,8 @@ import { yelpApi } from "./yelp-api.js"
 export const clickBtn = document.querySelector('#clickBtn')
 
 clickBtn.addEventListener('click', () =>{
+    const removeHidden = document.querySelector('#removeHidden')
+    removeHidden.removeAttribute("hidden")
     const input = document.querySelector('#showContent')
     // debugger
     console.log(input.value.toLowerCase())

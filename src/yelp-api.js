@@ -58,7 +58,7 @@ export async function yelpApi(input){
         console.log('it works')
     }
 
-    const withCategories = `?location=${inputLocation}&term=bookstore&categories=bookstores&sort_by=best_match`;
+    const withCategories = `?location=${inputLocation}&term=bookstore&categories=bookstores&sort_by=best_match&limit=10`;
     const withoutCategories = '?location=New%20York&term=bookstore&sort_by=best_match'
 
     const promise = axios.get(`${baseUrl}${withCategories}`, options)
@@ -206,6 +206,7 @@ export function displayAllPlaces(location){
 
         let anchorTag = document.createElement('a')
         anchorTag.href = ele.url
+        anchorTag.setAttribute('target', "_blank")
 
         let secondP = document.createElement('p')
         secondP.classList.add('bookstore-website')
