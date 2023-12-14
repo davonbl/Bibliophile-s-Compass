@@ -16,8 +16,13 @@ clickBtn.addEventListener('click', () =>{
     if(localStorage.getItem('inputLocation')){
         let comparePerviousInput = JSON.parse(localStorage.getItem('inputLocation'))
         if(input.value.toLowerCase() !== comparePerviousInput){
+            // debugger
             localStorage.removeItem('inputLocation')
             yelpApi(input.value.toLowerCase())
+        }else{
+            yelpApi(input.value.toLowerCase())
+            // console.log('here lies the error')
+            // console.log('you need to evoke the yelpAPI and input the input value in the else condition')
         }
     }else{
         yelpApi(input.value.toLowerCase())

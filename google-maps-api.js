@@ -13,10 +13,23 @@ export async function initMap(testing) {
       // mapId: "DEMO_MAP_ID"
     });
 
-    // const marker = new google.maps.Marker({
-    //   position: eastVilliageBooks,
-    //   map: map,
-    // })
+    console.log('google-maps-object-content', testing)
+
+    const infoWindow = new google.maps.InfoWindow()
+
+    const showContent = '<h1>East Villiage Books </h1>'
+
+    infoWindow.setContent(showContent)
+
+    const testingMarker = new google.maps.Marker({
+      map,
+      position: eastVilliageBooks,
+      
+    })
+
+    testingMarker.addListener('click', () => {
+      infoWindow.open(map, testingMarker)
+    })
 
     if(testing !== undefined && testing !== null){
       //this is where I would create a forLoop to loop through the coordinates from the 
