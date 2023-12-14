@@ -3,6 +3,7 @@ import { yelpApi, filterByCity, displayAllPlaces } from './src/yelp-api.js';
 import { filterByUsedBooks } from './src/filter-places.js';
 import { sortByAlphabeticalOrder } from './src/sort-places.js';
 import { initMap } from './google-maps-api.js';
+import { enabledCors } from './src/cors-bypasser.js';
 
 // (function() {
 //     var cors_api_host = 'cors-anywhere.herokuapp.com';
@@ -31,6 +32,8 @@ import { initMap } from './google-maps-api.js';
 // sortByAlphabeticalOrder(getValue)
 // let getValue = await yelpApi()
 // displayAllPlaces(getValue)
+
+enabledCors()
 
 document.querySelector('#sortBtn').addEventListener('click', async() => {
     let getValue = await yelpApi()

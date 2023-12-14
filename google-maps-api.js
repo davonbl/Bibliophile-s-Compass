@@ -38,7 +38,6 @@ export async function initMap(testing) {
       // let obj = Object.assign({}, lat, lng)
       let lat = Number(ele.latitude);
       let lng = Number(ele.longitude);
-      // let position = { lat: lat, lng: lng };
       let position = new google.maps.LatLng(lat, lng)
       new google.maps.Marker({
         position: position,
