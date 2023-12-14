@@ -41,11 +41,16 @@ export async function initMap(testing) {
     //   infoWindow.open(map, testingMarker)
     // })
 
+    let prev_infowindow = false; 
+
     if(testing !== undefined && testing !== null){
       //this is where I would create a forLoop to loop through the coordinates from the 
       //yelp or google places API, and I think I have to figure out how to create a filter mechnism
 
-      testing.forEach((ele) => {
+      testing.forEach((ele, i) => {
+
+        let id = i;
+        // console.log(id)
 
         const getInfoWindow = new google.maps.InfoWindow()
         const markerContent = `
@@ -71,6 +76,14 @@ export async function initMap(testing) {
         })
 
         showMarker.addListener('click', () => {
+          // debugger
+          console.log(prev_infowindow)
+          console.log(i)
+          console.log('clicked')
+          if(prev_infowindow){
+            prev_infowindow.close()
+          }
+          prev_infowindow = getInfoWindow;
           getInfoWindow.open(map, showMarker)
         })
       })
