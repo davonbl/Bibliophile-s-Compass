@@ -1,4 +1,4 @@
-import { initMap } from "../google-maps-api.js"
+import { initMap } from "./google-maps-api.js"
 
 
  function displayAllPlaces(location){

@@ -1,4 +1,4 @@
-import { initMap } from "../google-maps-api.js"
+import { initMap } from "./google-maps-api.js"
 import { yelpApi } from "./yelp-api.js"
 export const clickBtn = document.querySelector('#clickBtn')
 

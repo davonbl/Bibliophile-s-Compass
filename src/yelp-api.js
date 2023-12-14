@@ -3,7 +3,7 @@ import { YELP_API_KEY } from "../API-KEY.js";
 import { clickBtn } from "./inputQuery.js";
 
 import axios from "axios";
-import { initMap } from "../google-maps-api.js";
+import { initMap } from "./google-maps-api.js";
 
 export async function yelpApi(input){
 

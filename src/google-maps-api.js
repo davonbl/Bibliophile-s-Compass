@@ -17,7 +17,14 @@ export async function initMap(testing) {
 
     const infoWindow = new google.maps.InfoWindow()
 
-    const showContent = '<h1>East Villiage Books </h1>'
+    const showContent = `<h1>East Villiage Books </h1>
+    
+    
+    
+    
+    
+    
+    `
 
     infoWindow.setContent(showContent)
 
@@ -59,4 +66,5 @@ export async function initMap(testing) {
     }
 }
 
-initMap();
+// I moved this eveoked function to main.js file instead
+// initMap();
