@@ -1,4 +1,4 @@
-import { API_KEY } from "./API-KEY.js";
+import { GOOGLE_API_KEY } from "./API_KEYS.js";
 
 ((g) => {
   var h,
@@ -35,7 +35,7 @@ import { API_KEY } from "./API-KEY.js";
     ? console.warn(p + " only loads once. Ignoring:", g)
     : (d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)));
 })({
-  key: API_KEY,
+  key: GOOGLE_API_KEY,
   v: "weekly",
   // Use the 'v' parameter to indicate the version to use (weekly, beta, alpha, etc.).
   // Add other bootstrap parameters as needed, using camel case.

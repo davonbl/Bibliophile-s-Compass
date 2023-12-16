@@ -1,5 +1,5 @@
 import { displayAllPlaces } from './get-all-places.js'
-import { YELP_API_KEY } from "../API-KEY.js";
+import { YELP_API_KEY } from "../API_KEYS.js";
 import { clickBtn } from "./inputQuery.js";
 
 import axios from "axios";
