@@ -1,4 +1,4 @@
-# TKH-Bibliophile's Compass
+# Bibliophile's Compass
 
 
 This application called Bibliophile's Compass assists users in finding bookstores in New York, and surronding neighborhoods.
