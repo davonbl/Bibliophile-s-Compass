@@ -1,7 +1,7 @@
 # Bibliophile's Compass
 
 
-This application called Bibliophile's Compass assists users in finding bookstores in New York, and surronding neighborhoods.
+This application called Bibliophile's Compass assists users in finding bookstores in New York, and surrounding neighborhoods.
 
 Tools needed: Google Maps API Key & Yelp Fusion API Key, Visual Studio Code (VSC; recommended)/ simliar code editors, git bash (recommended), Vite, and this Github repo
 
