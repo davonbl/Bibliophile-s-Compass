@@ -1,7 +1,8 @@
 import { initMap } from "./google-maps-api.js"
+import { pageButtons } from "./pageButtons.js"
 
 
- function displayAllPlaces(location){
+ function displayAllPlaces(location , numOfSpots){
 
     let markersArr = []
 
@@ -10,7 +11,7 @@ import { initMap } from "./google-maps-api.js"
 
     let parentContainer = document.querySelector('#parentContainer')
 
-    location.forEach( ele => {
+    location.forEach( (ele, index) => {
         let childArr =[]
         // const places = document.getElementById("yelpData");
         // console.log(ele.coordinates)
@@ -82,9 +83,40 @@ import { initMap } from "./google-maps-api.js"
 
         parentContainer.append(orderedList)
 
+        if(index === location.length - 1){
+          debugger
+          console.log('this is the last bookstore', ele)
+          pageButtons(numOfSpots, orderedList)
+
+          // let unorderList = document.createElement('ul');
+          // unorderList.setAttribute('id', 'numOfPages')
+          // unorderList.classList.add('pages-list')
+
+        }
+
+        
+
         // console.log(ele.name)
 
     })
+
+    
+
+
+    // let unorderList = document.createElement('ul');
+    // unorderList.setAttribute('id', 'numOfPages')
+    // unorderList.classList.add('pages-list')
+
+    // for(let i = 1 ; i < actualPages; i++ ){
+
+    // }
+
+    // let unorderList = document.createElement('ul');
+    // unorderList.setAttribute('id', 'numOfPages')
+    // unorderList.classList.add('pages-list')
+
+
+
     // console.log(markersArr)
     initMap(markersArr)
 
