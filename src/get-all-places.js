@@ -84,8 +84,10 @@ import { pageButtons } from "./pageButtons.js"
         parentContainer.append(orderedList)
 
         if(index === location.length - 1){
-          debugger
+          // debugger
           console.log('this is the last bookstore', ele)
+          console.log(typeof numOfSpots)
+          console.log(numOfSpots)
           pageButtons(numOfSpots, orderedList)
 
           // let unorderList = document.createElement('ul');

@@ -66,6 +66,17 @@ export function pageButtons(numOfSpots, olContainer){
             console.log(`clicking on the ${i - 1} button`);
             let comparePerviousInput = JSON.parse(localStorage.getItem('inputLocation'))
             console.log(typeof comparePerviousInput, '. Here is the input: ',comparePerviousInput)
+
+            //this is where I can place the localStorage value at
+            //then I can reference the localStorage to the buttons 
+            if(localStorage.getItem('offsetNum')){
+                let initalOffsetNum = localStorage.getItem('offsetNum')
+                if(offsetNum !== initalOffsetNum){
+                    localStorage.removeItem('offsetNum')
+                    localStorage.setItem('offsetNum', offsetNum)
+                }
+            }
+            yelpApi(comparePerviousInput, offsetNum)
         })
         ul.append(li)
         olContainer.append(ul)

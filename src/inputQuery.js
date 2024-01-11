@@ -10,6 +10,10 @@ clickBtn.addEventListener('click', () =>{
     const input = document.querySelector('#showContent')
     let offsetNum = 0
 
+    if(!localStorage.getItem('offsetNum')){
+        localStorage.setItem('offsetNum', offsetNum)
+    }
+
     // for later
     // const googleMaps = document.querySelector('#map')
     // googleMaps.style.display = 'inline-block'

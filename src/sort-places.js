@@ -2,6 +2,7 @@ import { displayAllPlaces } from "./get-all-places.js"
 
 
 export function sortByAlphabeticalOrder(locations){
+    // debugger
 
     let sort = locations.slice().sort((a, b) => {
         let alphabet = 'abcdefghijklmnopqrstuvwxyz'
@@ -29,6 +30,7 @@ export function sortByAlphabeticalOrder(locations){
             return a0 - b0
         }        
     })
-    displayAllPlaces(sort)
+    let totalNumOfPlaces = JSON.parse(localStorage.getItem('totalNumOfPlaces'))
+    displayAllPlaces(sort, totalNumOfPlaces)
     // return sort
 }
