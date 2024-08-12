@@ -12,8 +12,10 @@ export async function initMap(testing) {
       zoom: 13,
       // mapId: "DEMO_MAP_ID"
     });
+        //HERE ARE THE LAST CONSOLE LOGS I COMMENTED OUT
+    // console.log('google-maps-object-content: ', testing)
 
-    console.log('google-maps-object-content: ', testing)
+    
     // console.log('very likely- the actual object: ', testing2)
 
     // const infoWindow = new google.maps.InfoWindow()
@@ -77,9 +79,11 @@ export async function initMap(testing) {
 
         showMarker.addListener('click', () => {
           // debugger
-          console.log(prev_infowindow)
-          console.log(i)
-          console.log('clicked')
+
+          //HERE ARE THE LAST CONSOLE LOGS I COMMENTED OUT
+          // console.log(prev_infowindow)
+          // console.log(i)
+          // console.log('clicked')
           if(prev_infowindow){
             prev_infowindow.close()
           }

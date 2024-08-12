@@ -1,6 +1,7 @@
 import { displayAllPlaces } from "./get-all-places.js";
 
 export function filterByUsedBooks(locations){
+    // debugger
 
     let returnFilterObj = locations.filter((bookstore) => {
 
@@ -23,6 +24,7 @@ export function filterByUsedBooks(locations){
     })
 
     // console.log(returnFilterObj)
-    displayAllPlaces(returnFilterObj)
+    let totalNumOfPlaces = JSON.parse(localStorage.getItem('totalNumOfPlaces'))
+    displayAllPlaces(returnFilterObj, totalNumOfPlaces)
     // return returnFilterObj
 }

@@ -7,7 +7,13 @@ clickBtn.addEventListener('click', () =>{
     removeHidden.removeAttribute("hidden")
     removeHidden.style.display = 'flex'
     removeHidden.style.justifyContent= "flex-start"
+    removeHidden.style.paddingTop = '0'
     const input = document.querySelector('#showContent')
+    let offsetNum = 0
+
+    if(!localStorage.getItem('offsetNum')){
+        localStorage.setItem('offsetNum', offsetNum)
+    }
 
     // for later
     // const googleMaps = document.querySelector('#map')
@@ -18,14 +24,14 @@ clickBtn.addEventListener('click', () =>{
         if(input.value.toLowerCase() !== comparePerviousInput){
             // debugger
             localStorage.removeItem('inputLocation')
-            yelpApi(input.value.toLowerCase())
+            yelpApi(input.value.toLowerCase(), offsetNum)
         }else{
-            yelpApi(input.value.toLowerCase())
+            yelpApi(input.value.toLowerCase(), offsetNum)
             // console.log('here lies the error')
             // console.log('you need to evoke the yelpAPI and input the input value in the else condition')
         }
     }else{
-        yelpApi(input.value.toLowerCase())
+        yelpApi(input.value.toLowerCase(), offsetNum)
     }
     
     // const eastVilliageBooks = { lat: 40.727405, lng: -73.984462 };

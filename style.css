@@ -150,3 +150,19 @@ h3{
   display: flex;
   justify-content: center;
 } */
+
+.pages-list li{
+  list-style: none;
+  text-decoration: none;
+  margin: 5px; 
+  font-size: 30px; 
+}
+
+.pages-list{
+  display: flex;
+
+}
+
+.nav-buttons{
+  font-weight:bold; 
+}

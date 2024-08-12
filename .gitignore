@@ -25,4 +25,4 @@ dist-ssr
 
 # JS files
 
-API_KEY.js
+.env

@@ -5,7 +5,8 @@ import { clickBtn } from "./inputQuery.js";
 import axios from "axios";
 import { initMap } from "./google-maps-api.js";
 
-export async function yelpApi(input){
+export async function yelpApi(input,offsetNum){
+    // debugger
 
     try{      /*
         The cors_anywhere variable is needed to bypass the cors error that is a byproduct of the Yelp development team 'to keep
@@ -43,13 +44,22 @@ export async function yelpApi(input){
             // console.log('it works')
         }
 
-        const withCategories = `?location=${inputLocation}&term=bookstore&categories=bookstores&sort_by=best_match&limit=10`;
+        const withCategories = `?location=${inputLocation}&term=bookstore&categories=bookstores&sort_by=best_match&limit=10&offset=${offsetNum}`;
         const withoutCategories = '?location=New%20York&term=bookstore&sort_by=best_match'
 
         const promise = axios.get(`${baseUrl}${withCategories}`, options)
 
-        const response = await promise    
+        const response = await promise 
+        //HERE ARE THE LAST CONSOLE LOGS I COMMENTED OUT   
+        // console.log('response: ', response.data)
         const businessesArr = response.data.businesses
+        //HERE ARE THE LAST CONSOLE LOGS I COMMENTED OUT
+        // console.log('numOfTotal: ', response.data.total)
+
+        let totalNumOfPlaces = response.data.total; 
+        if(!localStorage.getItem('totalNumOfPlaces')){
+            localStorage.setItem('totalNumOfPlaces', totalNumOfPlaces)
+        }
 
         // console.log('interesting', businessesArr)
         // console.log(businessesArr[0].name[0])
@@ -92,7 +102,7 @@ export async function yelpApi(input){
         if(input !== ''){
             // console.log(businessesArr)
             // let testingObj = await Promise.all(businessesArr)
-            displayAllPlaces(testingObj)
+            displayAllPlaces(testingObj, totalNumOfPlaces)
         }
 
         // displayAllPlaces(businessesArr)
