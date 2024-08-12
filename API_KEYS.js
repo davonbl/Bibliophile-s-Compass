@@ -4,9 +4,9 @@ This is the file where you place your Google Maps and Yelp Fusion API Keys.
 
 */
 
-const googleAPIKey = 'Place your Google Maps API key here';
+const googleAPIKey = import.meta.env.VITE_GOOGLE_KEY;
 
-const yelpAPIKey = 'Place your Yelp Fusion API key here';
+const yelpAPIKey = import.meta.env.VITE_YELP_KEY ;
 
 export const GOOGLE_API_KEY = `${googleAPIKey}`;
 
