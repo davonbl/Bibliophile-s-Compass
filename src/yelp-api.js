@@ -6,7 +6,7 @@ import axios from "axios";
 import { initMap } from "./google-maps-api.js";
 
 export async function yelpApi(input,offsetNum){
-    debugger
+    // debugger
 
     try{      /*
         The cors_anywhere variable is needed to bypass the cors error that is a byproduct of the Yelp development team 'to keep
@@ -49,11 +49,12 @@ export async function yelpApi(input,offsetNum){
 
         const promise = axios.get(`${baseUrl}${withCategories}`, options)
 
-        const response = await promise    
-        console.log('response: ', response.data)
+        const response = await promise 
+        //HERE ARE THE LAST CONSOLE LOGS I COMMENTED OUT   
+        // console.log('response: ', response.data)
         const businessesArr = response.data.businesses
-
-        console.log('numOfTotal: ', response.data.total)
+        //HERE ARE THE LAST CONSOLE LOGS I COMMENTED OUT
+        // console.log('numOfTotal: ', response.data.total)
 
         let totalNumOfPlaces = response.data.total; 
         if(!localStorage.getItem('totalNumOfPlaces')){

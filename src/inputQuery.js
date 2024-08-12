@@ -7,6 +7,7 @@ clickBtn.addEventListener('click', () =>{
     removeHidden.removeAttribute("hidden")
     removeHidden.style.display = 'flex'
     removeHidden.style.justifyContent= "flex-start"
+    removeHidden.style.paddingTop = '0'
     const input = document.querySelector('#showContent')
     let offsetNum = 0
 

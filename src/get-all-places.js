@@ -85,9 +85,10 @@ import { pageButtons } from "./pageButtons.js"
 
         if(index === location.length - 1){
           // debugger
-          console.log('this is the last bookstore', ele)
-          console.log(typeof numOfSpots)
-          console.log(numOfSpots)
+                  //HERE ARE THE LAST CONSOLE LOGS I COMMENTED OUT
+          // console.log('this is the last bookstore', ele)
+          // console.log(typeof numOfSpots)
+          // console.log(numOfSpots)
           pageButtons(numOfSpots, orderedList)
 
           // let unorderList = document.createElement('ul');
